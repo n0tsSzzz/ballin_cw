@@ -6,7 +6,7 @@ import pytest
 
 from rolling_stone import rolling_stone_angle
 
-test_cases = (
+TEST_CASES = (
     (
         5,
         15,
@@ -30,7 +30,7 @@ test_cases = (
     ),
 )
 
-test_cases_failure = (
+TEST_CASES_FAILURE = (
     (
         0,
         5,
@@ -48,7 +48,7 @@ test_cases_failure = (
 )
 
 
-@pytest.mark.parametrize('radius, acceleration, time, velocity, expected', test_cases)
+@pytest.mark.parametrize('radius, acceleration, time, velocity, expected', TEST_CASES)
 def test_rolling_stone_angle(
     radius: float,
     acceleration: float,
@@ -71,7 +71,7 @@ def test_rolling_stone_angle(
     assert rolling_stone_angle(radius, acceleration, time, velocity) == expected
 
 
-@pytest.mark.parametrize('radius, acceleration, time, velocity, expected', test_cases_failure)
+@pytest.mark.parametrize('radius, acceleration, time, velocity, expected', TEST_CASES_FAILURE)
 def test_rolling_stone_angle_failure(
     radius: float,
     acceleration: float,
